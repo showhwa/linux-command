@@ -48,6 +48,7 @@ wget [参数] [URL地址]
 –-sslcertfile=FILE 可选客户端证书
 –-sslcertkey=KEYFILE 可选客户端证书的KEYFILE
 –-egd-file=FILE 指定EGD socket的文件名
+--no-check-certificate 使用不检查证书
 
 下载参数：
 
