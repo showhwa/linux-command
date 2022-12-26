@@ -9,7 +9,7 @@
     <meta name="keywords" content="Linux,Command,命令大全,Linux命令手册,git,是目前世界上最先进的分布式版本控制系统">
     <title>git 命令，Linux git 命令详解：是目前世界上最先进的分布式版本控制系统 -  Linux 命令搜索引擎</title>
     <link rel="shortcut icon" href="../img/favicon.ico">
-    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1662967336117">
+    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1671615306203">
     <script src="../js/dark-mode.min.js"></script>
     <script type="module" src="../js/github-corners.js"></script>
 </head>
@@ -195,10 +195,10 @@ tag              创建，列出，删除或验证使用GPG签名的标签对象
 <p>remote</p>
 <p><code>git remote add origin git@github.com:JSLite/test.git</code> #添加源</p>
 <p>push</p>
-<pre class="language-shell"><code class="language-shell code-highlight"><span class="code-line line-number" line="1"><span class="token function">git</span> push <span class="token parameter variable">-u</span> origin master <span class="token comment"># push同事设置默认跟踪分支  </span>
+<pre class="language-shell"><code class="language-shell code-highlight"><span class="code-line line-number" line="1"><span class="token function">git</span> push <span class="token parameter variable">-u</span> origin master <span class="token comment"># push 同时设置默认跟踪分支  </span>
 </span><span class="code-line line-number" line="2"><span class="token function">git</span> push origin master  
 </span><span class="code-line line-number" line="3"><span class="token function">git</span> push <span class="token parameter variable">-f</span> origin master <span class="token comment"># 强制推送文件，缩写 -f（全写--force）</span>
-</span></code><div onclick="copied(this)" data-code="git push -u origin master # push同事设置默认跟踪分支  
+</span></code><div onclick="copied(this)" data-code="git push -u origin master # push 同时设置默认跟踪分支  
 git push origin master  
 git push -f origin master # 强制推送文件，缩写 -f（全写--force）
 " class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
@@ -1139,23 +1139,25 @@ git --git-dir=&#x27;<绝对地址>/.git&#x27; describe --tags HEAD # 查看本�
 <h2 id="日志log"><a class="anchor" aria-hidden="true" tabindex="-1" href="#日志log"><span class="octicon octicon-link"></span></a>日志log</h2>
 <pre class="language-shell"><code class="language-shell code-highlight"><span class="code-line line-number" line="1"><span class="token function">git</span> config format.pretty oneline  <span class="token comment">#显示历史记录时，每个提交的信息只显示一行   </span>
 </span><span class="code-line line-number" line="2"><span class="token function">git</span> config color.ui <span class="token boolean">true</span> <span class="token comment">#彩色的 git 输出   </span>
-</span><span class="code-line line-number" line="3"><span class="token function">git</span> log <span class="token comment">#查看最近的提交日志   </span>
-</span><span class="code-line line-number" line="4"><span class="token function">git</span> log <span class="token parameter variable">--pretty</span><span class="token operator">=</span>oneline <span class="token comment">#单行显示提交日志   </span>
-</span><span class="code-line line-number" line="5"><span class="token function">git</span> log <span class="token parameter variable">--graph</span> <span class="token parameter variable">--pretty</span><span class="token operator">=</span>oneline --abbrev-commit   
-</span><span class="code-line line-number" line="6"><span class="token function">git</span> log <span class="token parameter variable">-num</span> <span class="token comment">#显示第几条log（倒数）   </span>
-</span><span class="code-line line-number" line="7"><span class="token function">git</span> reflog <span class="token comment">#查看所有分支的所有操作记录   </span>
-</span><span class="code-line line-number" line="8"><span class="token function">git</span> log <span class="token parameter variable">--since</span><span class="token operator">=</span><span class="token number">1</span>.day <span class="token comment">#一天内的提交；你可以给出各种时间格式，比如说具体的某一天（“2008-01-15”），或者是多久以前（“2 years 1 day 3 minutes ago”）。   </span>
-</span><span class="code-line line-number" line="9"><span class="token function">git</span> log <span class="token parameter variable">--pretty</span><span class="token operator">=</span><span class="token string">"%h - %s"</span> <span class="token parameter variable">--author</span><span class="token operator">=</span>自己的名字 <span class="token comment">#查看自己的日志   </span>
-</span><span class="code-line line-number" line="10"><span class="token function">git</span> log <span class="token parameter variable">-p</span> <span class="token parameter variable">-2</span> <span class="token comment">#展开两次更新显示每次提交的内容差异   </span>
-</span><span class="code-line line-number" line="11"><span class="token function">git</span> log <span class="token parameter variable">--stat</span> <span class="token comment">#要快速浏览其他协作者提交的更新都作了哪些改动   </span>
-</span><span class="code-line line-number" line="12"><span class="token function">git</span> log <span class="token parameter variable">--pretty</span><span class="token operator">=</span>format:<span class="token string">"%h - %an, %ar : %s"</span>#定制要显示的记录格式   
-</span><span class="code-line line-number" line="13"><span class="token function">git</span> log <span class="token parameter variable">--pretty</span><span class="token operator">=</span>format:<span class="token string">'%h : %s'</span> --date-order <span class="token parameter variable">--graph</span> <span class="token comment"># 拓扑顺序展示   </span>
-</span><span class="code-line line-number" line="14"><span class="token function">git</span> log <span class="token parameter variable">--pretty</span><span class="token operator">=</span>format:<span class="token string">'%h : %s - %ad'</span> <span class="token parameter variable">--date</span><span class="token operator">=</span>short <span class="token comment">#日期YYYY-MM-DD显示   </span>
-</span><span class="code-line line-number" line="15"><span class="token function">git</span> log <span class="token operator">&#x3C;</span>last tag<span class="token operator">></span> HEAD <span class="token parameter variable">--pretty</span><span class="token operator">=</span>format:%s <span class="token comment"># 只显示commit   </span>
-</span><span class="code-line line-number" line="16"><span class="token function">git</span> config <span class="token parameter variable">--global</span> format.pretty <span class="token string">'%h : %s - %ad'</span> <span class="token parameter variable">--date</span><span class="token operator">=</span>short <span class="token comment">#日期YYYY-MM-DD显示 写入全局配置</span>
+</span><span class="code-line line-number" line="3"><span class="token function">git</span> log <span class="token comment">#查看提交日志，从最近的提交开始显示  </span>
+</span><span class="code-line line-number" line="4"><span class="token function">git</span> log <span class="token parameter variable">--reverse</span> <span class="token comment">#查看提交日志，从最远的提交开始显示</span>
+</span><span class="code-line line-number" line="5"><span class="token function">git</span> log <span class="token parameter variable">--pretty</span><span class="token operator">=</span>oneline <span class="token comment">#单行显示提交日志   </span>
+</span><span class="code-line line-number" line="6"><span class="token function">git</span> log <span class="token parameter variable">--graph</span> <span class="token parameter variable">--pretty</span><span class="token operator">=</span>oneline --abbrev-commit   
+</span><span class="code-line line-number" line="7"><span class="token function">git</span> log <span class="token parameter variable">-num</span> <span class="token comment">#显示第几条log（倒数）   </span>
+</span><span class="code-line line-number" line="8"><span class="token function">git</span> reflog <span class="token comment">#查看所有分支的所有操作记录   </span>
+</span><span class="code-line line-number" line="9"><span class="token function">git</span> log <span class="token parameter variable">--since</span><span class="token operator">=</span><span class="token number">1</span>.day <span class="token comment">#一天内的提交；你可以给出各种时间格式，比如说具体的某一天（“2008-01-15”），或者是多久以前（“2 years 1 day 3 minutes ago”）。   </span>
+</span><span class="code-line line-number" line="10"><span class="token function">git</span> log <span class="token parameter variable">--pretty</span><span class="token operator">=</span><span class="token string">"%h - %s"</span> <span class="token parameter variable">--author</span><span class="token operator">=</span>自己的名字 <span class="token comment">#查看自己的日志   </span>
+</span><span class="code-line line-number" line="11"><span class="token function">git</span> log <span class="token parameter variable">-p</span> <span class="token parameter variable">-2</span> <span class="token comment">#展开两次更新显示每次提交的内容差异   </span>
+</span><span class="code-line line-number" line="12"><span class="token function">git</span> log <span class="token parameter variable">--stat</span> <span class="token comment">#要快速浏览其他协作者提交的更新都作了哪些改动   </span>
+</span><span class="code-line line-number" line="13"><span class="token function">git</span> log <span class="token parameter variable">--pretty</span><span class="token operator">=</span>format:<span class="token string">"%h - %an, %ar : %s"</span>#定制要显示的记录格式   
+</span><span class="code-line line-number" line="14"><span class="token function">git</span> log <span class="token parameter variable">--pretty</span><span class="token operator">=</span>format:<span class="token string">'%h : %s'</span> --date-order <span class="token parameter variable">--graph</span> <span class="token comment"># 拓扑顺序展示   </span>
+</span><span class="code-line line-number" line="15"><span class="token function">git</span> log <span class="token parameter variable">--pretty</span><span class="token operator">=</span>format:<span class="token string">'%h : %s - %ad'</span> <span class="token parameter variable">--date</span><span class="token operator">=</span>short <span class="token comment">#日期YYYY-MM-DD显示   </span>
+</span><span class="code-line line-number" line="16"><span class="token function">git</span> log <span class="token operator">&#x3C;</span>last tag<span class="token operator">></span> HEAD <span class="token parameter variable">--pretty</span><span class="token operator">=</span>format:%s <span class="token comment"># 只显示commit   </span>
+</span><span class="code-line line-number" line="17"><span class="token function">git</span> config <span class="token parameter variable">--global</span> format.pretty <span class="token string">'%h : %s - %ad'</span> <span class="token parameter variable">--date</span><span class="token operator">=</span>short <span class="token comment">#日期YYYY-MM-DD显示 写入全局配置</span>
 </span></code><div onclick="copied(this)" data-code="git config format.pretty oneline  #显示历史记录时，每个提交的信息只显示一行   
 git config color.ui true #彩色的 git 输出   
-git log #查看最近的提交日志   
+git log #查看提交日志，从最近的提交开始显示  
+git log --reverse #查看提交日志，从最远的提交开始显示
 git log --pretty=oneline #单行显示提交日志   
 git log --graph --pretty=oneline --abbrev-commit   
 git log -num #显示第几条log（倒数）   
@@ -1170,66 +1172,66 @@ git log --pretty=format:&#x27;%h : %s - %ad&#x27; --date=short #日期YYYY-MM-DD
 git log <last tag> HEAD --pretty=format:%s # 只显示commit   
 git config --global format.pretty &#x27;%h : %s - %ad&#x27; --date=short #日期YYYY-MM-DD显示 写入全局配置
 " class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
-<table>
-  <thead>
-    <tr>
-      <th>选项</th>
-      <th>说明</th>
-      <th>选项</th>
-      <th>说明</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>%H</td>
-      <td>提交对象（commit）的完整哈希字串</td>
-      <td>%ad</td>
-      <td>作者修订日期（可以用 -date= 选项定制格式）</td>
-    </tr>
-    <tr>
-      <td>%h</td>
-      <td>提交对象的简短哈希字串</td>
-      <td>%ar</td>
-      <td>作者修订日期，按多久以前的方式显示</td>
-    </tr>
-    <tr>
-      <td>%T</td>
-      <td>树对象（tree）的完整哈希字串</td>
-      <td>%cn</td>
-      <td>提交者(committer)的名字</td>
-    </tr>
-    <tr>
-      <td>%t</td>
-      <td>树对象的简短哈希字串</td>
-      <td>%ce</td>
-      <td>提交者的电子邮件地址</td>
-    </tr>
-    <tr>
-      <td>%P</td>
-      <td>父对象（parent）的完整哈希字串</td>
-      <td>%cd</td>
-      <td>提交日期</td>
-    </tr>
-    <tr>
-      <td>%p</td>
-      <td>父对象的简短哈希字串</td>
-      <td>%cr</td>
-      <td>提交日期，按多久以前的方式显示</td>
-    </tr>
-    <tr>
-      <td>%an</td>
-      <td>作者（author）的名字</td>
-      <td>%s</td>
-      <td>提交说明</td>
-    </tr>
-    <tr>
-      <td>%ae</td>
-      <td>作者的电子邮件地址</td>
-      <td>-</td>
-      <td>-</td>
-    </tr>
-  </tbody>
-</table>
+
+  
+    
+      
+      
+      
+      
+    
+  
+  
+    
+      
+      
+      
+      
+    
+    
+      
+      
+      
+      
+    
+    
+      
+      
+      
+      
+    
+    
+      
+      
+      
+      
+    
+    
+      
+      
+      
+      
+    
+    
+      
+      
+      
+      
+    
+    
+      
+      
+      
+      
+    
+    
+      
+      
+      
+      
+    
+  
+<table><thead><tr><th>选项</th><th>说明</th><th>选项</th><th>说明</th></tr></thead><tbody><tr><td>%H</td><td>提交对象（commit）的完整哈希字串</td><td>%ad</td><td>作者修订日期（可以用 -date= 选项定制格式）</td></tr><tr><td>%h</td><td>提交对象的简短哈希字串</td><td>%ar</td><td>作者修订日期，按多久以前的方式显示</td></tr><tr><td>%T</td><td>树对象（tree）的完整哈希字串</td><td>%cn</td><td>提交者(committer)的名字</td></tr><tr><td>%t</td><td>树对象的简短哈希字串</td><td>%ce</td><td>提交者的电子邮件地址</td></tr><tr><td>%P</td><td>父对象（parent）的完整哈希字串</td><td>%cd</td><td>提交日期</td></tr><tr><td>%p</td><td>父对象的简短哈希字串</td><td>%cr</td><td>提交日期，按多久以前的方式显示</td></tr><tr><td>%an</td><td>作者（author）的名字</td><td>%s</td><td>提交说明</td></tr><tr><td>%ae</td><td>作者的电子邮件地址</td><td>-</td><td>-</td></tr></tbody></table>
 <p><a href="https://git-scm.com/docs/git-log#_pretty_formats">Pretty Formats</a></p>
 <h2 id="重写历史"><a class="anchor" aria-hidden="true" tabindex="-1" href="#重写历史"><span class="octicon octicon-link"></span></a>重写历史</h2>
 <pre class="language-shell"><code class="language-shell code-highlight"><span class="code-line line-number" line="1"><span class="token function">git</span> commit <span class="token parameter variable">--amend</span>    <span class="token comment"># 改变最近一次提交  </span>
@@ -1393,10 +1395,10 @@ function copied(target, str) {
   收藏本站请使用 Ctrl+D 或者Command+d
   <br /> 共搜集到
   <span id="commands_info">
-    583
+    587
   </span> 个Linux命令，超过 <a href="../contributors.html">50+</a> 贡献者
 </div>
-<script type="text/javascript" src="../js/dt.js?v=1662967336118"></script>
-<script type="text/javascript" src="../js/index.js?v=1662967336118"></script>
+<script type="text/javascript" src="../js/dt.js?v=1671615306204"></script>
+<script type="text/javascript" src="../js/index.js?v=1671615306204"></script>
 </body>
 </html>
